@@ -9,9 +9,15 @@ modules:
     path: approuter
     parameters:
       disk-quota: 512M
-      memory: 512M
+      memory: 256M
     requires:
       - name: cosinv_destination
+      - name: uaa_cosinv
+        group: destinations
+        properties:
+          name: INVEN
+          forwardAuthToken: true
+          url: https://cosapi-tc060765.cfapps.eu10.hana.ondemand.com
     build-parameters:
       builder: custom
       commands:
@@ -23,3 +29,10 @@ resources:
     parameters:
       service-plan: lite
       service: destination
+  - name: uaa_cosinv
+    type: org.cloudfoundry.existing-service
+    parameters:
+      path: ./xs-security.json
+      service-name: xsuaa-service-tutorial
+      service: xsuaa
+      service-plan: application
