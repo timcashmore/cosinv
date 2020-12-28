@@ -1,6 +1,6 @@
 sap.ui.define([
     "sap/base/Log",
-    "sap/ui/core/mvc/Controller",
+    "cosinv/cosinv/controller/BaseController",
 	"sap/ui/model/Sorter",
 	"sap/ui/model/json/JSONModel",
     "sap/ui/core/format/DateFormat",
@@ -14,12 +14,12 @@ sap.ui.define([
 	"sap/ui/table/RowAction",
 	"sap/ui/table/RowActionItem",
 	"sap/ui/table/RowSettings"
-], function(Log, Controller, Sorter, JSONModel, DateFormat, ToolbarSpacer, Filter, FilterOperator, library, jquery, MessageBox, MessageToast, RowAction, RowActionItem, RowSettings) {
+], function(Log, BaseController, Sorter, JSONModel, DateFormat, ToolbarSpacer, Filter, FilterOperator, library, jquery, MessageBox, MessageToast, RowAction, RowActionItem, RowSettings) {
     "use strict";
     
 	var oSort = library.SortOrder;
 	
-    return Controller.extend("cosinv.cosinv.controller.ProductList", {
+    return BaseController.extend("cosinv.cosinv.controller.ProductList", {
 
 		onInit : function () {
 			var oView = this.getView();
@@ -281,8 +281,8 @@ sap.ui.define([
 			console.log("in initDataModel");
 			var oProductModel = new JSONModel();
 			// Set promise to update the data
-//			var oPromise = oProductModel.loadData("./TestData/Products.json");
-			var oPromise = oProductModel.loadData("/api/inventory");
+			var oPromise = oProductModel.loadData("./TestData/Products.json");
+//			var oPromise = oProductModel.loadData("/api/inventory");
 //			var oPromise = oProductModel.loadData("/availabilityRawData");
 //			oProductModel.loadData("./TestData/Products.json");
 //			$.ajax()
@@ -311,7 +311,7 @@ sap.ui.define([
 //					 i % 2 > 0 ? testFlag = 0 : testFlag = 1;
 				}; 
 			}); 
-			//Set the data models to be used by the views
+			//Set the data models to be used by the views  
 			var oUiModel = new JSONModel({
 				globalFilter: "",
 				visibleRowCount: 20,

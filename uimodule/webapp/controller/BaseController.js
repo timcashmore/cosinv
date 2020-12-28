@@ -10,6 +10,7 @@ sap.ui.define([
 
     formatter: formatter,
 
+    
     /**
      * Convenience method for getting the view model by name in every controller of the application.
      * @public
@@ -61,6 +62,7 @@ sap.ui.define([
       if (sPreviousHash !== undefined) {
         window.history.back();
       } else {
+        console.log("this=" + this);
         this.getRouter().navTo("appHome", {}, true /*no history*/ );
       }
     }

@@ -67,14 +67,24 @@
         "viewPath": "cosinv.cosinv.view",
         "controlId": "idAppControl",
         "controlAggregation": "pages",
-        "async": true
+        "transition": "slide",
+        "async": true,
+        "bypassed": {
+          "target": "notFound"
+        }
       },
       "routes": [
         {
-          "name": "RouteApp",
-          "pattern": "RouteApp",
+          "name": "appHome",
+          "pattern": "",
           "target": [
             "TargetApp"
+          ]
+        }, {
+          "name": "productList",
+          "pattern": "productList",
+          "target": [
+            "productList"
           ]
         }
       ],
@@ -82,9 +92,19 @@
         "TargetApp": {
           "viewType": "XML",
           "viewLevel": 1,
-          "viewId": "idAppControl",
-          "viewName": "App"
-        }
+          "viewId": "home",
+          "viewName": "Home"
+        },
+        "notFound": {
+          "viewId": "notFound",
+          "viewName": "NotFound",
+          "transition": "show"
+       }, 
+       "productList": {
+          "viewId": "productList",
+          "viewName": "ProductList",
+          "viewLevel": 2
+       }
       }
     }
   }

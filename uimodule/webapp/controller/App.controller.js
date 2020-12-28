@@ -1,7 +1,7 @@
 sap.ui.define([
   "cosinv/cosinv/controller/BaseController"
-], function(Controller) {
+], function(BaseController) {
   "use strict";
 
-  return Controller.extend("cosinv.cosinv.controller.App", {});
+  return BaseController.extend("cosinv.cosinv.controller.App", {});
 });

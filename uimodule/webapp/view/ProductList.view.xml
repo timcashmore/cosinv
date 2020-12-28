@@ -4,6 +4,12 @@
 	xmlns:t="sap.ui.table"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core">
+	<m:Page
+		id="productListPage"
+		title="{i18n>ProductList}"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+	<m:content>
 	<t:Table
 		id="table"
 		rows="{product>/items}"
@@ -128,4 +134,6 @@
 				</t:Column>
 		</t:columns>
 	</t:Table>
+	</m:content>
+	</m:Page>
 </mvc:View>
