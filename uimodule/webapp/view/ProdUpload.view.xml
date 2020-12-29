@@ -17,14 +17,18 @@
 					id="fileUploader"
 					name="myFileUpload"
 					uploadUrl="api/produpload"
-					tooltip="Upload your file to the local server"
+					tooltip="{i18n>prodUploadToolTip}"
 					sendXHR="true"
-					fileType="json"
+					fileType="csv"
 					uploadComplete="handleUploadComplete"/>
 				<Button
 					text="Upload File"
 					press="handleUploadPress"/>
+				<Text 
+					text="{i18n>prodUploadText}" 
+					width="50rem"/>
 			</l:VerticalLayout>
+			
 		</content>
 	</Page>
 </mvc:View>
