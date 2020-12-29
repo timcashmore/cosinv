@@ -10,3 +10,6 @@ Makefile*
 mta-*
 approuter/*/webapp/
 approuter/node_modules
+.DS_Store
+uimodule/.DS_Store
+uimodule/webapp/.DS_Store
