@@ -1,0 +1,30 @@
+<mvc:View
+	controllerName="cosinv.cosinv.controller.ProdUpload"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	class="viewPadding">
+	<Page 
+		title="{i18n>prodUploadTitle}" 
+		class="sapUiResponsiveContentPadding"
+		id="prodUploadPage"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+		<content>
+			<l:VerticalLayout>
+				<u:FileUploader
+					id="fileUploader"
+					name="myFileUpload"
+					uploadUrl="api/produpload"
+					tooltip="Upload your file to the local server"
+					sendXHR="true"
+					fileType="json"
+					uploadComplete="handleUploadComplete"/>
+				<Button
+					text="Upload File"
+					press="handleUploadPress"/>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</mvc:View>

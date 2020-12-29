@@ -20,6 +20,11 @@
       "source": "^/api/inventory",
       "authenticationType": "xsuaa",
       "destination": "INVEN"
+    },
+    {
+      "source": "^/api/produpload",
+      "authenticationType": "xsuaa",
+      "destination": "INVEN"
     }
   ]
 }

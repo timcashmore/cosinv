@@ -12,7 +12,11 @@ sap.ui.define([
 		},
         onNavToProductList : function () {
 			this.getRouter().navTo("productList");
-		},
+        },
+        
+        onNavToProdUpload : function () {
+			this.getRouter().navTo("prodUpload");
+        },
 
  
     });

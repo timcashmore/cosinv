@@ -86,6 +86,13 @@
           "target": [
             "productList"
           ]
+        },
+        {
+          "name": "prodUpload",
+          "pattern": "prodUpload",
+          "target": [
+            "prodUpload"
+          ]
         }
       ],
       "targets": {
@@ -104,7 +111,12 @@
           "viewId": "productList",
           "viewName": "ProductList",
           "viewLevel": 2
-       }
+       },
+       "prodUpload": {
+        "viewId": "prodUpload",
+        "viewName": "ProdUpload",
+        "viewLevel": 2
+     }
       }
     }
   }
