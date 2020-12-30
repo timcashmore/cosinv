@@ -281,8 +281,8 @@ sap.ui.define([
 			console.log("in initDataModel");
 			var oProductModel = new JSONModel();
 			// Set promise to update the data
-			var oPromise = oProductModel.loadData("./TestData/Products.json");
-//			var oPromise = oProductModel.loadData("/api/inventory");
+//			var oPromise = oProductModel.loadData("./TestData/Products.json");
+			var oPromise = oProductModel.loadData("/api/inventory");
 //			var oPromise = oProductModel.loadData("/availabilityRawData");
 //			oProductModel.loadData("./TestData/Products.json");
 //			$.ajax()
