@@ -4,7 +4,8 @@ sap.ui.define(['sap/m/MessageToast','cosinv/cosinv/controller/BaseController'],
 
 	return BaseController.extend("cosinv.cosinv.controller.ProdUpload", {
 		handleUploadComplete: function(oEvent) {
-			var sResponse = oEvent.getParameter("response");
+            var sResponse = oEvent.getParameter("response");
+            
 			if (sResponse) {
 				var sMsg = "";
 				var m = /^\[(\d\d\d)\]:(.*)$/.exec(sResponse);

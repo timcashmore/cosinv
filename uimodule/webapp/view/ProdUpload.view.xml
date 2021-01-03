@@ -15,8 +15,8 @@
 			<l:VerticalLayout>
 				<u:FileUploader
 					id="fileUploader"
-					name="myFileUpload"
-					uploadUrl="api/produpload"
+					name="prodFile"
+					uploadUrl="http://127.0.0.1:3000/api/produpload"
 					tooltip="{i18n>prodUploadToolTip}"
 					sendXHR="true"
 					fileType="csv"
@@ -27,6 +27,7 @@
 				<Text 
 					text="{i18n>prodUploadText}" 
 					width="50rem"/>
+				
 			</l:VerticalLayout>
 			
 		</content>
