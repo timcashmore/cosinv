@@ -4,25 +4,14 @@ sap.ui.define(['sap/m/MessageToast','cosinv/cosinv/controller/BaseController'],
 
 	return BaseController.extend("cosinv.cosinv.controller.ProdUpload", {
 		handleUploadComplete: function(oEvent) {
-            var sResponse = oEvent.getParameter("response");
-            
-			if (sResponse) {
-				var sMsg = "";
-				var m = /^\[(\d\d\d)\]:(.*)$/.exec(sResponse);
-				if (m[1] == "200") {
-					sMsg = "Return Code: " + m[1] + "\n" + m[2] + "(Upload Success)";
-					oEvent.getSource().setValue("");
-				} else {
-					sMsg = "Return Code: " + m[1] + "\n" + m[2] + "(Upload Error)";
-                }
-                console.log("File Upload Message " + sMsg);
-
-				MessageToast.show(sMsg);
-			} else {
-                console.log("Error infile uplaod " + oEvent.getParameter("status"));
-                MessageToast.show("Error Processing File in BackEnd");
-
-            }
+			var sStatus = oEvent.getParameter("status");
+			//Check if status is 2xx
+			console.log("Product File Upload Failed with HTTP Status = " + sStatus);
+			var sMsg = `Problem Uploading File - Status Code = ${sStatus}`;
+			if (/^[2][0-9][0-9]$/.test(sStatus)) {
+				sMsg = `File Successfully uploaded with HTTP Status Code = ${sStatus}`;
+			}
+			MessageToast.show(sMsg);
 		},
 
 		handleUploadPress: function() {
