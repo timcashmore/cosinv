@@ -16,20 +16,18 @@
 				<u:FileUploader
 					id="fileUploader"
 					name="prodFile"
-					uploadUrl="http://127.0.0.1:3000/api/produpload"
+					uploadUrl="/api/produpload"
 					tooltip="{i18n>prodUploadToolTip}"
 					sendXHR="true"
 					fileType="csv"
 					uploadComplete="handleUploadComplete"/>
 				<Button
-					text="Upload File"
+					text="Upload Products"
 					press="handleUploadPress"/>
 				<Text 
 					text="{i18n>prodUploadText}" 
 					width="50rem"/>
-				
-			</l:VerticalLayout>
-			
+			</l:VerticalLayout>			
 		</content>
 	</Page>
 </mvc:View>

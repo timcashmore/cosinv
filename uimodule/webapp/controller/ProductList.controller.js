@@ -161,6 +161,13 @@ sap.ui.define([
 			return bAvailable ? "Success" : "Error";
 		},
 
+		onRefreshPress: function() {
+			this.clearAllSortings();
+			this.clearAllFilters();
+			this.initDataModel();   //Reload the data
+		},
+
+
 		onSavePress: function(oEvent) {
 			this.showUpdated(oEvent);
 			MessageBox.confirm("Save all updates ?", { onClose: oAction => {
@@ -281,10 +288,9 @@ sap.ui.define([
 			console.log("in initDataModel");
 			var oProductModel = new JSONModel();
 			// Set promise to update the data
-			var oPromise = oProductModel.loadData("./TestData/Products.json");
-//			var oPromise = oProductModel.loadData("/api/inventory");
+//			var oPromise = oProductModel.loadData("http://127.0.0.1:3000/api/inventory");
+			var oPromise = oProductModel.loadData("/api/inventory");
 //			var oPromise = oProductModel.loadData("/availabilityRawData");
-//			oProductModel.loadData("./TestData/Products.json");
 //			$.ajax()
 /*			jQuery.ajax("/api/Inventory", {
 				dataType: "json",

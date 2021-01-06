@@ -30,6 +30,11 @@
 							tooltip="{i18n>InventorySaveToolTip}"
 							press="onSavePress"/>
 						<m:Button
+							id="srefreshave"
+							icon="sap-icon://refresh"
+							tooltip="{i18n>InventoryRefreshToolTip}"
+							press="onRefreshPress"/>
+						<m:Button
 							id="showUpdated"
 							text="{i18n>SelectUpdated}"
 							tooltip="{i18n>SelectUpdatedToolTip}"

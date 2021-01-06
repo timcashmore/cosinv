@@ -19,12 +19,13 @@
     {
       "source": "^/api/inventory",
       "authenticationType": "xsuaa",
-      "destination": "INVEN"
+      "destination": "COSAPI"
     },
     {
       "source": "^/api/produpload",
       "authenticationType": "xsuaa",
-      "destination": "INVEN"
+      "destination": "COSAPI",
+      "httpMethods": ["GET", "POST"]
     }
   ]
 }

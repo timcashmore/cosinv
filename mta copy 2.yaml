@@ -12,7 +12,12 @@ modules:
       memory: 256M
     requires:
       - name: cosinv_destination
-      - name: uaa_cosinv            
+      - name: uaa_cosinv
+        group: destinations
+        properties:
+          name: INVEN
+          forwardAuthToken: true
+          url: https://cosapi-tc060765.cfapps.eu10.hana.ondemand.com
     build-parameters:
       builder: custom
       commands:
