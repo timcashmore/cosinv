@@ -191,19 +191,20 @@ sap.ui.define([
 				delete item.description;
 				delete item.catalog;
 				delete item.updated;
+				item.calculatedAt = (new Date()).toISOString();  // Set date/time to now!
+//				console.log("item date" + item.calculatedAt);
 				item.items[0].quantity = item.items[0].iQuantity
 				delete item.items[0].iQuantity;
 				delete item.items[0].oldQuantity;
 			} );
 			console.log("items= " + oModel.oData.items.length);
-//			console.log(new Date().toISOString());
 			console.log("updated= " + updatedInventoryValues.length);
 			//Post the data and wait
 			this._postInventory(JSON.stringify(updatedInventoryValues));
 		},
 
 		_postInventory: function (updatedInventoryJSON) {
-			console.log("in Post Inventory" + updatedInventoryJSON);
+//			console.log("in Post Inventory" + updatedInventoryJSON);
 			// Need to get xrsf token first
 			$.ajax({
 				url: '/availabilityRawData',
