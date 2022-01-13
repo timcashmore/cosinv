@@ -290,7 +290,8 @@ sap.ui.define([
 			var oProductModel = new JSONModel();
 			// Set promise to update the data
 //			var oPromise = oProductModel.loadData("http://127.0.0.1:3000/api/inventory");
-			var oPromise = oProductModel.loadData("/api/inventory");
+//			var oPromise = oProductModel.loadData("/api/inventory");
+			var oPromise = oProductModel.loadData("./TestData/Products.json");
 //			var oPromise = oProductModel.loadData("/availabilityRawData");
 //			$.ajax()
 /*			jQuery.ajax("/api/Inventory", {

@@ -33,6 +33,6 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
       path: ./xs-security.json
-      service-name: xsuaa-service-tutorial
+      service-name: xsuaa-service-tutxxxxx
       service: xsuaa
       service-plan: application

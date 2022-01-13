@@ -1,25 +1,30 @@
-ID: cosinv
+ID: timc_cosinv
 _schema-version: 3.2.0
 version: 0.0.1
 parameters:
   enable-parallel-deployments: true
 modules:
-  - name: cosinv
+  - name: timc_cosinv
     type: nodejs
     path: approuter
     parameters:
       disk-quota: 512M
       memory: 256M
     requires:
-      - name: cosinv_destination
-      - name: uaa_cosinv            
+      - name: timc_cosinv_destination
+      - name: uaa_cosinv
+        group: destinations
+        properties:
+          name: COSAPI2
+          forwardAuthToken: true
+          url: https://cosapi-i330179.cfapps.eu10.hana.ondemand.com/            
     build-parameters:
       builder: custom
       commands:
         - npm install
         - npm run build:ui --prefix ..
 resources:
-  - name: cosinv_destination
+  - name: timc_cosinv_destination
     type: org.cloudfoundry.managed-service
     parameters:
       service-plan: lite
@@ -28,6 +33,6 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
       path: ./xs-security.json
-      service-name: xsuaa-service-tutorial
+      service-name: timc_xsuaa_service
       service: xsuaa
       service-plan: application
